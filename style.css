@@ -18,6 +18,12 @@ html{
     margin: 0;
     
 }
+*:focus{
+    outline: none;
+    transform: scale(1.2);
+    border-bottom: 2px solid var(--GrayishBlue);
+    padding-bottom: .5rem;
+}
 body{
     font-family: 'Public Sans', sans-serif;
     font-size: 18px;
