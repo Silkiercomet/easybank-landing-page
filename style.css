@@ -439,7 +439,13 @@ header{
         background-repeat: none;
         background-size: cover;
         padding: 0.5rem .7rem;
+        transition: 200ms ease-in-out;
     }
+    #mobile-drop:checked + .label-mobile .mobile{
+        background-image: url(images/icon-close.svg);
+        background-size: cover;
+        background-position: center center;
+    }  
     header{
         padding: 2rem ;
         justify-content: space-between;
@@ -484,6 +490,7 @@ header{
         width: 100%;
     
     }
+
     .hero .right figure img{
     position: relative;
     transform: translateY(-120px);
