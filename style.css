@@ -16,6 +16,7 @@ html{
     box-sizing: inherit;
     padding: 0;
     margin: 0;
+    
 }
 body{
     font-family: 'Public Sans', sans-serif;
@@ -23,7 +24,19 @@ body{
 }
  /* utilities */
 
-
+ body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--LightGrayishBlue);        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--LimeGreen);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid var(--LightGrayishBlue);  /* creates padding around scroll thumb */
+  }
 .btn{
     position: relative;
     display: block;
@@ -94,6 +107,7 @@ ul{
  /* navbar - header */
 
 header{
+    width: 100%;
     display: flex;
     justify-content: space-around;
     padding: 2rem 4rem;
@@ -105,12 +119,32 @@ header{
 .navbar ul{
     list-style: none;
     display: flex;
+    
+}
+.navbar ul li{
+    position: relative;
 }
 .navbar ul li a{
     color: var(--GrayishBlue);
     padding: 0 1rem;
+    
 }
-.mobile{
+.navbar ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 2px 0;
+    background-color: var(--LimeGreen);
+    width: 0;
+    transition: 400ms ease-in-out;
+}
+.navbar ul li a:hover::after{
+    width: 50%;
+}
+.mobile, .label-mobile{
     display: none;
 }
 #mobile-drop{
@@ -394,7 +428,7 @@ header{
         display: none;
     }
     .mobile{
-        display: block;
+        display: inline-block;
         background-image: url(images/icon-hamburger.svg);
         background-repeat: none;
         background-size: cover;
@@ -522,8 +556,67 @@ header{
     font-size: .94rem;
 }
  
+
  
  /* articles */
+
+ footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--DarkBlue);
+    height: auto;
+    align-items: center;
+    padding: 2.5rem 0;
+}
+.ft-1{
+   padding-left: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.social-media-icons ul {
+   display: flex;
+   padding-top: 1rem ;
+ }
+ .sr-only {
+   display: none;
+ }
+ 
+ .social-media-icons ul li {
+   padding: 0 0.4rem;
+ }
+ 
+
+ .ft-2 ul li a, .ft-3 ul li a{
+     color: white;
+     transition: 300ms ease-in-out;
+ }
+ .ft-2 ul li a:hover, .ft-3 ul li a:hover{
+     color: var(--LimeGreen);
+     
+ }
+ .ft-2 ul{
+     padding-top: 1rem;
+ }
+ .ft-3 ul{
+     padding-bottom: 1rem;
+ }
+ .ft-2 ul li , .ft-3 ul li {
+     padding: 0.5rem 0;
+     text-align: center;
+ }
+ .ft-4{
+     padding-right: 0rem;
+ }
+ .ft-4 p{
+   padding-top: 1.5rem ;
+ }
+ .btn:hover::before {
+   opacity: 1;
+ }
+/* footer */
 
 }
 
