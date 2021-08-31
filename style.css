@@ -444,6 +444,9 @@ header{
         padding: 2rem ;
         justify-content: space-between;
     }
+    .label-mobile{
+        display: inline-block;
+    }
     /* hero */
 
     .hero{
